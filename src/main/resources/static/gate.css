@@ -1,0 +1,28 @@
+.navbar {
+    background-color: #1c1c1c;
+    overflow: hidden;
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; 
+    display: flex; 
+    align-items: center;
+    border-bottom: 0cqh;
+}
+
+.navbar-links {
+    margin-right: auto;
+}
+
+.navbar a {
+    color: rgb(215, 213, 213);
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.navbar a:hover {
+    color: rgb(255, 255, 255);
+}
