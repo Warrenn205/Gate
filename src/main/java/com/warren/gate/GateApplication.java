@@ -19,8 +19,34 @@ public class GateApplication {
         return "gate"; 
     }
 
+    // @GetMapping("/home")
+    // public String home() {
+    //     return "gate"; 
+    // }
+
     @GetMapping("/projects")
     public String projects() {
         return "projects";
     }
+
+    @GetMapping("/crm")
+    public String crm() {
+        return "crm";
+    }
+
+    @GetMapping("/scheduling")
+    public String schedule() {
+        return "schedules";
+    }
+
+    @GetMapping("/finance")
+    public String finances() {
+        return "finance";
+    }
+
+    @GetMapping("/documents")
+    public String documents() {
+        return "documents";
+    }
+
 }
