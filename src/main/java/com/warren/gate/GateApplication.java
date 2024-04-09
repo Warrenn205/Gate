@@ -19,10 +19,10 @@ public class GateApplication {
         return "gate"; 
     }
 
-    // @GetMapping("/home")
-    // public String home() {
-    //     return "gate"; 
-    // }
+    @GetMapping("/home")
+    public String home() {
+        return "gate"; 
+    }
 
     @GetMapping("/projects")
     public String projects() {
