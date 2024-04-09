@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:extends="gate.html">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Tasks Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gate</title>
+    <link rel="stylesheet" href="/gate.css">
 </head>
 <body>
-    <!-- Specific content for the tasks page -->
-    <div th:fragment="content">
-        <h2>Welcome to the Tasks Page</h2>
-        <p>This is the content of the tasks page.</p>
+    <div class="navbar">
+        <div class="logosection">
+            <img src="/Gate (White).png" class="gatewhitelogo" width="179" height="53">
+        </div>
+        <div>
+            <a href="#home">Home</a>
+            <a href="/tasks">Tasks</a>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+        <h1>Tasks</h1>
     </div>
 </body>
 </html>
