@@ -55,7 +55,9 @@ h4 {
     height: 200px;
     border: 1px solid #4f88d3;
     background-color: #4f88d3;
+    font-family: Arial, Helvetica, sans-serif;
     border-radius: 10px;
+    color: white;
     cursor: pointer;
     transition: transform 0.2s;
   }
