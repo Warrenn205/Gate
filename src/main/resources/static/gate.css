@@ -48,3 +48,62 @@ h4 {
 .add-project:hover {
     background-color: rgb(20, 134, 205);
 }
+
+/* Add your CSS styles here */
+.crm_card {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #4f88d3;
+    background-color: #4f88d3;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .crm_card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-content {
+    padding: 20px;
+  }
+  
+  .prompt-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* Initially hide the overlay */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .prompt-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .prompt-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .prompt-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .prompt-button:hover {
+    background-color: #0056b3;
+  }
+  
