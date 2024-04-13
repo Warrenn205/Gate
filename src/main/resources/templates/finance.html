@@ -24,5 +24,54 @@
 <br>
 <br>
     <h1>Financials</h1>
+    <style>
+        .financials-pages {
+            background-color: rgb(0, 157, 255);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        .financials-pages:hover {
+            background-color: rgb(20, 134, 205);
+        }
+
+        .page-section {
+            display: none;
+        }
+    
+        .page-section.active {
+            display: block;
+        }
+    </style>
+    </head>
+    <body>
+    
+    <button class="financials-pages" onclick="showSection('finance')">Finance</button>
+    <button class="financials-pages" onclick="showSection('balance')">Balance Sheet</button>
+    
+    <div id="finance" class="page-section active">
+        <h2>Finance</h2>
+        <p>This is where you manange your finances for your business</p>
+    </div>
+    
+    <div id="balance" class="page-section">
+        <h2>Balance Sheet</h2>
+        <p>This is where you can view all financial information for your business</p>
+    </div>
+    
+    <script>
+        function showSection(sectionId) {
+            var sections = document.getElementsByClassName("page-section");
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].classList.remove("active");
+            }
+    
+            var selectedSection = document.getElementById(sectionId);
+            selectedSection.classList.add("active");
+        }
+    </script>
 </body>
 </html>
