@@ -49,7 +49,7 @@ h4 {
     background-color: rgb(20, 134, 205);
 }
 
-/* Add your CSS styles here */
+
 .crm_card {
     width: 200px;
     height: 200px;
@@ -120,4 +120,8 @@ h4 {
 
 .add-schedule:hover {
   background-color: rgb(20, 134, 205);
+}
+
+h3 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
