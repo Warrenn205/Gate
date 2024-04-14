@@ -51,6 +51,7 @@
     
     <button class="financials-pages" onclick="showSection('finance')">Finance</button>
     <button class="financials-pages" onclick="showSection('balance')">Balance Sheet</button>
+    <button class="financials-pages" onclick="showSection('statement')">Income Statement</button>
     
     <div id="finance" class="page-section active">
         <h2>Finance</h2>
@@ -62,6 +63,10 @@
         <p>This is where you can view all financial information for your business</p>
     </div>
     
+    <div id="statement" class="page-section2">
+        <h2>Balance Sheet</h2>
+        <p>This is where you can view all financial information for your business</p>
+    </div>
     <script>
         function showSection(sectionId) {
             var sections = document.getElementsByClassName("page-section");
