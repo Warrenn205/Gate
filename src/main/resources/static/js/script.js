@@ -5,14 +5,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const submitButton = document.querySelector("#submitInput");
 
   card.addEventListener("click", function () {
-    overlay.style.display = "flex"; // Display the overlay when card is clicked
+    overlay.style.display = "flex"; 
     input.focus();
   });
 
   submitButton.addEventListener("click", function () {
     const userInput = input.value;
     console.log("User input:", userInput);
-    overlay.style.display = "none"; // Hide the overlay after submitting input
-    input.value = ""; // Clear the input field
+    overlay.style.display = "none"; 
+    input.value = ""; 
   });
 });
