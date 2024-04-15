@@ -81,6 +81,23 @@
         .add-button:hover {
             background-color: rgba(19, 147, 68, 0.96);
         }
+
+        .delete {
+            padding: 10px 20px;
+            background-color: rgba(191, 13, 13, 0.96);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 12px 20px;
+            margin-bottom: 10px;
+            display: inline-block;
+            box-sizing: border-box;
+            border-radius: 7px;
+        }
+
+        .delete:hover {
+            background-color: rgba(120, 11, 11, 0.96);
+        }
     </style>
     </head>
     <body>
@@ -98,6 +115,7 @@
             <input type="text" id="input" class="category" placeholder="Enter Category">
             <input type="number" id="input" class="input" placeholder="Enter Income">
             <button class="add-button">Add Income</button>
+            <button class="delete">Delete</button>
             <div class="total-income">Total Income: $0.00</div>
         </div>
         <div class="expense-stream">
@@ -105,6 +123,7 @@
             <input type="text" id="input" class="category" placeholder="Enter Category">
             <input type="number" id="input" class="input" placeholder="Enter Expense">
             <button class="add-button">Add Expenses</button>
+            <button class="delete">Delete</button>
             <div id="total-expenses">Total Income: $0.00</div>
             <h3>Net Income</h3>
             <div class="net-income">Net Income: $0.00</div>
@@ -115,6 +134,7 @@
             <input type="text" id="input" class="category" placeholder="Enter Category">
             <input type="number" id="input" class="input" placeholder="Enter Liability">
             <button class="add-button">Add Liabilities</button>
+            <button class="delete">Delete</button>
             <div class="total-liabilities">Total Assets: $0.00</div>
         </div>
         <div class="equity-stream">
@@ -122,6 +142,7 @@
             <input type="text" id="input" class="category" placeholder="Enter Category">
             <input type="number" id="input" class="input" placeholder="Enter Equity">
             <button class="add-button">Add Equity</button>
+            <button class="delete">Delete</button>
             <div class="total-equity">Total Shareholder's Equity: $0.00</div>
             <h3>Assets</h3>
             <div class="assets">Assets: $0.00</div>
