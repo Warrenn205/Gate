@@ -37,6 +37,19 @@
             background-color: rgb(20, 134, 205);
         }
 
+        .task-pages {
+            background-color: rgba(13, 191, 81, 0.96);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        .task-pages:hover {
+            background-color: rgba(19, 147, 68, 0.96);
+        }
+
         .page-section {
             display: none;
         }
@@ -49,7 +62,7 @@
     <body>
     
     <button class="project-pages" onclick="showSection('projects')">Projects</button>
-    <button class="project-pages" onclick="showSection('tasks')">Tasks</button>
+    <button class="task-pages" onclick="showSection('tasks')">Tasks</button>
     
     <div id="projects" class="page-section active">
         <br>
@@ -58,7 +71,7 @@
     
     <div id="tasks" class="page-section">
         <br>
-        <button class="add-project">+ Add Task</button>
+        <button class="task-pages" onclick="showSection('tasks')">+ Add Task</button>
     </div>
     
     <script>

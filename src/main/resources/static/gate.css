@@ -55,7 +55,7 @@ h4 {
     height: 200px;
     border: 1px solid #4f88d3;
     background-color: #4f88d3;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border-radius: 10px;
     color: white;
     cursor: pointer;
@@ -109,13 +109,26 @@ h4 {
   .prompt-button:hover {
     background-color: #0056b3;
   }
+  
+  .cancel-button {
+    padding: 10px 20px;
+    background-color: rgba(191, 13, 13, 0.96);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cancel-button:hover {
+    background-color: rgba(120, 11, 11, 0.96);
+  }
 
   .crm_card2 {
     width: 200px;
     height: 200px;
-    border: 1px solid #4f88d3;
-    background-color: #4f88d3;
-    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid rgba(19, 147, 68, 0.96);
+    background-color: rgba(19, 147, 68, 0.96);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border-radius: 10px;
     color: white;
     cursor: pointer;
