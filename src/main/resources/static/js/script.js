@@ -35,3 +35,22 @@ document.addEventListener("DOMContentLoaded", function () {
     input.value = ""; 
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const card = document.querySelector(".schedule_card");
+  const overlay3 = document.querySelector(".prompt-overlay3");
+  const input = document.querySelector(".prompt-input3");
+  const submitButton = document.querySelector("#submitInput3");
+
+  card.addEventListener("click", function () {
+    overlay3.style.display = "flex"; 
+    input.focus();
+  });
+
+  submitButton.addEventListener("click", function () {
+    const userInput3 = input.value;
+    console.log("User input:", userInput3);
+    overlay3.style.display = "none"; 
+    input.value = ""; 
+  });
+});
