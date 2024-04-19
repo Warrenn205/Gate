@@ -14,8 +14,6 @@ public class employee {
         this.email = email;
 
 }
-
-
     public String getName() {
         return name;
     }
