@@ -310,30 +310,6 @@ input[type="date"]:hover {
   width: 200px; /* Adjust as needed */
   height: 200px; /* Adjust as needed */
   margin: 10px; /* Add spacing between cards */
-  border: 1px solid #4f88d3;
-  background-color: #4f88d3;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  border-radius: 10px;
-  color: white;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: scale(1.05);
-}
-
-.right-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
-.card {
-  width: 200px; /* Adjust as needed */
-  height: 200px; /* Adjust as needed */
-  margin: 10px; /* Add spacing between cards */
-  border: 1px solid #4f88d3;
   background-color: #4f88d3;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   border-radius: 10px;
