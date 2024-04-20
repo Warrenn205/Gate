@@ -127,9 +127,9 @@ h4 {
   .crm_card2 {
     width: 200px;
     height: 200px;
-    border: 1px solid  #003cff;
-    background-color: #003cff;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 1px solid  #1acc0a;
+    background-color: #1acc0a;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     border-radius: 10px;
     color:  rgb(255, 255, 255);
     cursor: pointer;
@@ -310,11 +310,12 @@ input[type="date"]:hover {
 .card {
   width: 200px; 
   height: 200px; 
-  background-color: #003cff;
+  background-color: #e6e4e4f4;
   font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  border: 1px solid #003cff;
+  border: 1px solid #e6e4e4f4;
   border-radius: 10px;
-  color: rgb(255, 255, 255);
+  font-size: small;
+  color: rgb(0, 0, 0);
   cursor: pointer;
   transition: transform 0.2s;
 }
