@@ -57,6 +57,96 @@
         .page-section.active {
             display: block;
         }
+
+        .prompt-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.prompt-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 300px; 
+    max-width: 80%;
+}
+
+.prompt-box h1 {
+    margin-top: 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+.prompt-box h2 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.prompt-input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.prompt-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: rgb(0, 157, 255);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: rgb(231, 76, 60);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-button:hover {
+    background-color: rgb(192, 57, 43);
+}
+
+.prompt-button:hover {
+    background-color: rgb(20, 134, 205);
+}
+
+.project-container {
+    white-space: nowrap;
+}
+
+.project-info {
+    margin-right: 10px;
+    margin-bottom: 10px; 
+    padding: 10px;
+    border: 2px solid rgb(0, 157, 255);
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+h2 {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
     </style>
     </head>
     <body>
@@ -66,12 +156,33 @@
     
     <div id="projects" class="page-section active">
         <br>
-        <button class="add-project">+ Add Project</button>
+        <button class="add-project" id="addProject">+ Add Project</button>
+        <div id="projectContainer" class="project-container"></div>
     </div>
     
     <div id="tasks" class="page-section">
         <br>
         <button class="task-pages" onclick="showSection('tasks')">+ Add Task</button>
+    </div>
+
+    <div id="addProjectModal" class="prompt-overlay">
+        <div class="prompt-box">
+            <h1>Add Project</h1>
+            <h2>Project Name</h2>
+            <input type="text" id="projectName" class="prompt-input">
+            <h2>Owner</h2>
+            <input type="text" id="owner" class="prompt-input">
+            <h2>Due Date</h2>
+            <input type="date" id="dueDate" class="prompt-input">
+            <h2>Priority</h2>
+            <select id="priority" class="prompt-input">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <button id="submitProject" class="prompt-button">Add Project</button>
+            <button id="cancelProject" class="cancel-button">Cancel</button>
+        </div>
     </div>
     
     <script>
@@ -86,6 +197,35 @@
             var selectedSection = document.getElementById(sectionId);
             selectedSection.classList.add("active");
         }
+
+        document.getElementById("addProject").addEventListener("click", function() {
+            document.getElementById("addProjectModal").style.display = "block";
+        });
+
+        document.getElementById("cancelProject").addEventListener("click", function() {
+            document.getElementById("addProjectModal").style.display = "none";
+        });
+
+        document.getElementById("submitProject").addEventListener("click", function() {
+            const projectName = document.getElementById("projectName").value;
+            const owner = document.getElementById("owner").value;
+            const dueDate = document.getElementById("dueDate").value;
+            const priority = document.getElementById("priority").value;
+
+            const projectArea = document.createElement("div");
+            projectArea.classList.add("project-info");
+            projectArea.innerHTML = `
+                <span>Project Name: ${projectName}</span>
+                <span>Owner: ${owner}</span>
+                <span>Status: Assigned</span>
+                <span>Due Date: ${dueDate}</span>
+                <span>Priority: ${priority}</span>
+            `;
+            document.getElementById("projects").appendChild(projectArea);
+
+            document.getElementById("addProjectModal").style.display = "none";
+        });
+
     </script>
 </div>
 </body>
