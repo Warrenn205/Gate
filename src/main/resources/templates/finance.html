@@ -93,6 +93,8 @@
             display: inline-block;
             box-sizing: border-box;
             border-radius: 7px;
+            margin-left: 10px; 
+            margin-right: 10px;
         }
 
         .delete:hover {
@@ -111,38 +113,33 @@
         <h3>Income Statement Financials</h3>
         <div class="revenue-stream">
             <h3>Revenue</h3>
-            <h4>Income</h4>
-            <input type="text" id="input" class="category" placeholder="Enter Category">
-            <input type="number" id="input" class="input" placeholder="Enter Income">
-            <button class="add-button">Add Income</button>
-            <button class="delete">Delete</button>
+            <div id="incomeStream">
+            </div>
+            <button class="add-button" onclick="addInputField('incomeStream')">Add Income</button>
             <div class="total-income">Total Income: $0.00</div>
         </div>
         <div class="expense-stream">
-            <h4>Expenses</h4>
-            <input type="text" id="input" class="category" placeholder="Enter Category">
-            <input type="number" id="input" class="input" placeholder="Enter Expense">
-            <button class="add-button">Add Expenses</button>
-            <button class="delete">Delete</button>
+            <h3>Expenses</h3>
+            <div id="expenseStream">
+            </div>
+            <button class="add-button" onclick="addInputField('expenseStream')">Add Expenses</button>
             <div id="total-expenses">Total Expenses: $0.00</div>
             <h3>Net Income</h3>
             <div class="net-income">Net Income: $0.00</div>
         </div>
         <h3>Balance Sheet Financials</h3>
         <div class="liability-stream">
-            <h4>Liabilities</h4>
-            <input type="text" id="input" class="category" placeholder="Enter Category">
-            <input type="number" id="input" class="input" placeholder="Enter Liability">
-            <button class="add-button">Add Liabilities</button>
-            <button class="delete">Delete</button>
+            <h3>Liabilities</h3>
+            <div id="liabilityStream">
+            </div>
+            <button class="add-button" onclick="addInputField('liabilityStream')">Add Liabilities</button>
             <div class="total-liabilities">Total Liabilities: $0.00</div>
         </div>
         <div class="equity-stream">
-            <h4>Shareholder's Equity</h4>
-            <input type="text" id="input" class="category" placeholder="Enter Category">
-            <input type="number" id="input" class="input" placeholder="Enter Equity">
-            <button class="add-button">Add Equity</button>
-            <button class="delete">Delete</button>
+            <h3>Shareholder's Equity</h3>
+            <div id="equityStream">
+            </div>
+            <button class="add-button" onclick="addInputField('equityStream')">Add Equity</button>
             <div class="total-equity">Total Shareholder's Equity: $0.00</div>
             <h3>Assets</h3>
             <div class="assets">Assets: $0.00</div>
@@ -172,6 +169,31 @@
             selectedSection.classList.add("active");
 
             selectedSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function addInputField(containerId) {
+            var container = document.getElementById(containerId);
+            var input = document.createElement("input");
+            input.type = "text";
+            input.className = "category";
+            input.placeholder = "Enter Category";
+            container.appendChild(input);
+            var input2 = document.createElement("input");
+            input2.type = "number";
+            input2.className = "input";
+            input2.placeholder = "Enter Amount";
+            container.appendChild(input2);
+            container.appendChild(document.createTextNode(" "));
+            var deleteButton = document.createElement("button");
+            deleteButton.className = "delete";
+            deleteButton.innerText = "Delete";
+            deleteButton.onclick = function () {
+                container.removeChild(input);
+                container.removeChild(input2);
+                container.removeChild(deleteButton);
+                container.removeChild(document.createTextNode(" "));
+            };
+            container.appendChild(deleteButton);
         }
     </script>
 </body>
