@@ -163,42 +163,56 @@
     </div>
 
     <script>
-        function showSection(sectionId) {
-            var sections = document.getElementsByClassName("page-section");
-            for (var i = 0; i < sections.length; i++) {
-                sections[i].classList.remove("active");
+        function addInputField() {
+        var container = document.getElementById("incomeStream");
+        var input = document.createElement("input");
+        input.type = "number";
+        input.className = "input";
+        input.placeholder = "Enter Amount";
+
+        // Add an event listener to update total income when input value changes
+        input.addEventListener("input", updateTotalIncome);
+
+        var categoryInput = document.createElement("input");
+        categoryInput.type = "text";
+        categoryInput.className = "category";
+        categoryInput.placeholder = "Enter Category";
+        container.appendChild(categoryInput);
+
+        var deleteButton = document.createElement("button");
+        deleteButton.className = "delete";
+        deleteButton.innerText = "Delete";
+        deleteButton.onclick = function () {
+            container.removeChild(categoryInput)
+            container.removeChild(input);
+            container.removeChild(deleteButton);
+            updateTotalIncome(); // Update total income after deleting an input field
+        };
+        
+        container.appendChild(categoryInput);
+        container.appendChild(input);
+        container.appendChild(deleteButton);
+        
+    }
+
+    function deleteInputField(button) {
+        var container = document.getElementById("incomeStream");
+        var input = button.previousSibling;
+        container.removeChild(input);
+        container.removeChild(button);
+        updateTotalIncome(); // Update total income after deleting an input field
+    }
+
+    function updateTotalIncome() {
+        var totalIncome = 0;
+        var inputFields = document.querySelectorAll("#incomeStream .input");
+        inputFields.forEach(function(input) {
+            if(input.value) {
+                totalIncome += parseFloat(input.value);
             }
-
-            var selectedSection = document.getElementById(sectionId);
-            selectedSection.classList.add("active");
-
-            selectedSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
-        function addInputField(containerId) {
-            var container = document.getElementById(containerId);
-            var input = document.createElement("input");
-            input.type = "text";
-            input.className = "category";
-            input.placeholder = "Enter Category";
-            container.appendChild(input);
-            var input2 = document.createElement("input");
-            input2.type = "number";
-            input2.className = "input";
-            input2.placeholder = "Enter Amount";
-            container.appendChild(input2);
-            container.appendChild(document.createTextNode(" "));
-            var deleteButton = document.createElement("button");
-            deleteButton.className = "delete";
-            deleteButton.innerText = "Delete";
-            deleteButton.onclick = function () {
-                container.removeChild(input);
-                container.removeChild(input2);
-                container.removeChild(deleteButton);
-                container.removeChild(document.createTextNode(" "));
-            };
-            container.appendChild(deleteButton);
-        }
+        });
+        document.querySelector(".total-income").textContent = "Total Income: $" + totalIncome.toFixed(2);
+    }
     </script>
 </body>
 </html>
