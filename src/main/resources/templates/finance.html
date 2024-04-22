@@ -126,7 +126,7 @@
                 
             </div>
             <button class="add-button" onclick="addExpenseField('expenseStream')">Add Expenses</button>
-            <div id="total-expenses">Total Expenses: $0.00</div>
+            <div class="total-expenses">Total Expenses: $0.00</div>
             <h4>Net Income</h4>
             <div class="net-income">Net Income: $0.00</div>
         </div>
@@ -262,6 +262,21 @@
             }
         });
         document.querySelector(".total-expenses").textContent = "Total Expenses: $" + totalExpenses.toFixed(2);
+
+        function updateNetIncome() {
+            // Get the total income
+            var totalIncome = parseFloat(document.querySelector(".total-income").textContent.replace("Total Income: $", ""));
+            
+            // Get the total expenses
+            var totalExpenses = parseFloat(document.querySelector(".total-expenses").textContent.replace("Total Expenses: $", ""));
+            
+            // Calculate the net income
+            var netIncome = totalIncome - totalExpenses;
+            
+            // Update the "Net Income" display
+            document.querySelector(".net-income").textContent = "Net Income: $" + netIncome.toFixed(2);
+    }
+
     }
     </script>
 </body>
