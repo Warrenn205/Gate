@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const cancelButtonCustomer = document.querySelector("#cancelCustomer");
 
   const rightContainer = document.querySelector(".right-container");
+  const rightContainer2 = document.querySelector(".right-container2");
 
   card.addEventListener("click", function () {
     overlay.style.display = "flex";
@@ -41,9 +42,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const newCard = document.createElement("div");
     newCard.innerHTML = cardHTML;
 
+    const newCard2 = document.createElement("div");
+    newCard2.innerHTML = cardHTML;
+
     newCard.classList.add("card");
+    newCard2.classList.add("card2");
 
     rightContainer.appendChild(newCard);
+    rightContainer2.appendChild(newCard2);
 
     overlay.style.display = "none";
     inputName.value = "";
@@ -78,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
 
     rightContainer.insertAdjacentHTML("beforeend", cardHTML);
+    rightContainer2.insertAdjacentHTML("beforeend", cardHTML)
 
     overlay2.style.display = "none";
     inputName2.value = "";
