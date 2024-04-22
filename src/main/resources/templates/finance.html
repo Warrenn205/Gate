@@ -113,6 +113,7 @@
         <h3>Income Statement Financials</h3>
         <div class="revenue-stream">
             <h3>Revenue</h3>
+            <h4>Income</h4>
             <div id="incomeStream">
                 
             </div>
@@ -120,18 +121,18 @@
             <div class="total-income">Total Income: $0.00</div>
         </div>
         <div class="expense-stream">
-            <h3>Expenses</h3>
+            <h4>Expenses</h4>
             <div id="expenseStream">
                 
             </div>
-            <button class="add-button" onclick="addInputField('expenseStream')">Add Expenses</button>
+            <button class="add-button" onclick="addExpenseField('expenseStream')">Add Expenses</button>
             <div id="total-expenses">Total Expenses: $0.00</div>
-            <h3>Net Income</h3>
+            <h4>Net Income</h4>
             <div class="net-income">Net Income: $0.00</div>
         </div>
         <h3>Balance Sheet Financials</h3>
         <div class="liability-stream">
-            <h3>Liabilities</h3>
+            <h4>Liabilities</h4>
             <div id="liabilityStream">
                 
             </div>
@@ -139,13 +140,13 @@
             <div class="total-liabilities">Total Liabilities: $0.00</div>
         </div>
         <div class="equity-stream">
-            <h3>Shareholder's Equity</h3>
+            <h4>Shareholder's Equity</h4>
             <div id="equityStream">
                 
             </div>
             <button class="add-button" onclick="addInputField('equityStream')">Add Equity</button>
             <div class="total-equity">Total Shareholder's Equity: $0.00</div>
-            <h3>Assets</h3>
+            <h4>Assets</h4>
             <div class="assets">Assets: $0.00</div>
         </div>
     </div>
@@ -211,6 +212,56 @@
             }
         });
         document.querySelector(".total-income").textContent = "Total Income: $" + totalIncome.toFixed(2);
+    }
+
+    function addExpenseField() {
+        var container = document.getElementById("expenseStream");
+        var input = document.createElement("input");
+        input.type = "number";
+        input.className = "input";
+        input.placeholder = "Enter Amount";
+
+        input.addEventListener("input", updateTotalExpenses);
+
+        var categoryExpense = document.createElement("input");
+        categoryExpense.type = "text";
+        categoryExpense.className = "category";
+        categoryExpense.placeholder = "Enter Category";
+        container.appendChild(categoryExpense);
+
+        var deleteButton = document.createElement("button");
+        deleteButton.className = "delete";
+        deleteButton.innerText = "Delete";
+        deleteButton.onclick = function () {
+            container.removeChild(categoryExpense)
+            container.removeChild(input);
+            container.removeChild(deleteButton);
+            updateTotalExpenses(); 
+        };
+
+        container.appendChild(categoryExpense);
+        container.appendChild(input);
+        container.appendChild(deleteButton);
+        
+    }
+
+    function deleteExpenseField(button) {
+        var container = document.getElementById("expenseStream");
+        var input = button.previousSibling;
+        container.removeChild(input);
+        container.removeChild(button);
+        updateTotalExpenses(); 
+    }
+
+    function updateTotalExpenses() {
+        var totalExpenses = 0;
+        var expenseFields = document.querySelectorAll("#expenseStream .input");
+        expenseFields.forEach(function(input) {
+            if(input.value) {
+                totalExpenses += parseFloat(input.value);
+            }
+        });
+        document.querySelector(".total-expenses").textContent = "Total Expenses: $" + totalExpenses.toFixed(2);
     }
     </script>
 </body>
