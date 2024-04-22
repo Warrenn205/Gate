@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
     newCard2.classList.add("card2");
 
     rightContainer.appendChild(newCard);
-    rightContainer2.appendChild(newCard2);
 
     overlay.style.display = "none";
     inputName.value = "";
@@ -83,8 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     `;
 
-    rightContainer.insertAdjacentHTML("beforeend", cardHTML);
-    rightContainer2.insertAdjacentHTML("beforeend", cardHTML)
+    rightContainer2.insertAdjacentHTML("beforeend", cardHTML);
 
     overlay2.style.display = "none";
     inputName2.value = "";
