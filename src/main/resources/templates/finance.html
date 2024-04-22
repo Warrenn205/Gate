@@ -170,7 +170,6 @@
         input.className = "input";
         input.placeholder = "Enter Amount";
 
-        // Add an event listener to update total income when input value changes
         input.addEventListener("input", updateTotalIncome);
 
         var categoryInput = document.createElement("input");
@@ -186,9 +185,9 @@
             container.removeChild(categoryInput)
             container.removeChild(input);
             container.removeChild(deleteButton);
-            updateTotalIncome(); // Update total income after deleting an input field
+            updateTotalIncome(); 
         };
-        
+
         container.appendChild(categoryInput);
         container.appendChild(input);
         container.appendChild(deleteButton);
@@ -200,7 +199,7 @@
         var input = button.previousSibling;
         container.removeChild(input);
         container.removeChild(button);
-        updateTotalIncome(); // Update total income after deleting an input field
+        updateTotalIncome(); 
     }
 
     function updateTotalIncome() {
