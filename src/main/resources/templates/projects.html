@@ -214,12 +214,13 @@ h2 {
 
             const projectArea = document.createElement("div");
             projectArea.classList.add("project-info");
+            projectArea.style.fontFamily = "Arial, sans-serif";
             projectArea.innerHTML = `
                 <span>Project Name: ${projectName}</span>
-                <span>Owner: ${owner}</span>
-                <span>Status: Assigned</span>
-                <span>Due Date: ${dueDate}</span>
-                <span>Priority: ${priority}</span>
+                <span>| Owner: ${owner}</span>
+                <span>| Status: Assigned</span>
+                <span>| Due Date: ${dueDate}</span>
+                <span>| Priority: ${priority}</span>
             `;
             document.getElementById("projects").appendChild(projectArea);
 
