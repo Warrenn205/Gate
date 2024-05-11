@@ -58,7 +58,7 @@
             display: block;
         }
 
-        .prompt-overlay {
+.prompt-overlay {
     display: none;
     position: fixed;
     top: 0;
@@ -162,7 +162,8 @@ h2 {
     
     <div id="tasks" class="page-section">
         <br>
-        <button class="task-pages" onclick="showSection('tasks')">+ Add Task</button>
+        <button class="add-task" id="addTask">+ Add Task</button>
+        <div id="taskContainer" class="task-container"></div>
     </div>
 
     <div id="addProjectModal" class="prompt-overlay">
@@ -172,6 +173,26 @@ h2 {
             <input type="text" id="projectName" class="prompt-input">
             <h2>Owner</h2>
             <input type="text" id="owner" class="prompt-input">
+            <h2>Due Date</h2>
+            <input type="date" id="dueDate" class="prompt-input">
+            <h2>Priority</h2>
+            <select id="priority" class="prompt-input">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <button id="submitProject" class="prompt-button">Add Project</button>
+            <button id="cancelProject" class="cancel-button">Cancel</button>
+        </div>
+    </div>
+
+    <div id="addTaskModal" class="prompt-overlay">
+        <div class="prompt-box">
+            <h1>Add Task</h1>
+            <h2>Task Name</h2>
+            <input type="text" id="taskName" class="prompt-input">
+            <h2>Assignee</h2>
+            <input type="text" id="assignee" class="prompt-input">
             <h2>Due Date</h2>
             <input type="date" id="dueDate" class="prompt-input">
             <h2>Priority</h2>
@@ -198,6 +219,7 @@ h2 {
             selectedSection.classList.add("active");
         }
 
+        //Function for adding Projects.
         document.getElementById("addProject").addEventListener("click", function() {
             document.getElementById("addProjectModal").style.display = "block";
         });
@@ -226,8 +248,38 @@ h2 {
             document.getElementById("projects").appendChild(projectArea);
 
             document.getElementById("addProjectModal").style.display = "none";
-        });
 
+            // Function for adding Tasks.
+            document.getElementById("addTask").addEventListener("click", function() {
+                document.getElementById("addTaskModal").style.display = "block";
+            });
+
+            document.getElementById("cancelTask").addEventListener("click", function() {
+                document.getElementById("addTaskModal").style.display = "none";
+            });
+
+            document.getElementById("submitTask").addEventListener("click", function() {
+            const taskName = document.getElementById("taskName").value;
+            const assignee = document.getElementById("assignee").value;
+            const dueDate = document.getElementById("dueDate").value;
+            const priority = document.getElementById("priority").value;
+
+            const taskArea = document.createElement("div");
+            taskArea.classList.add("task-info");
+            taskArea.style.fontFamily = "Arial, sans-serif";
+            taskArea.style.backgroundColor = "White";
+            taskArea.innerHTML = `
+                <span>Task Name: ${taskName}</span>
+                <span>| Assignee: ${assignee}</span>
+                <span>| Status: Assigned</span>
+                <span>| Due Date: ${dueDate}</span>
+                <span>| Priority: ${priority}</span>
+            `;
+            document.getElementById("tasks").appendChild(taskArea);
+
+            document.getElementById("addTaskModal").style.display = "none";
+        });
+    });
     </script>
 </div>
 </body>
