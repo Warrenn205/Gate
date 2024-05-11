@@ -147,6 +147,91 @@ h2 {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.prompt-overlay2 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.prompt-box2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 300px; 
+    max-width: 80%;
+}
+
+.prompt-box2 h1 {
+    margin-top: 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+.prompt-box2 h2 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.prompt-input2 {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.prompt-button2 {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: rgba(152, 13, 191, 0.96);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-button2 {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: rgb(231, 76, 60);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-button2:hover {
+    background-color: rgb(192, 57, 43);
+}
+
+.prompt-button2:hover {
+    background-color: rgba(97, 8, 121, 0.96);
+}
+
+.project-container2 {
+    white-space: nowrap;
+}
+
+.project-info2 {
+    margin-right: 10px;
+    margin-bottom: 10px; 
+    padding: 10px;
+    border: 2px solid rgb(0, 157, 255);
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
     </style>
     </head>
     <body>
@@ -186,23 +271,23 @@ h2 {
         </div>
     </div>
 
-    <div id="addTaskModal" class="prompt-overlay">
-        <div class="prompt-box">
+    <div id="addTaskModal" class="prompt-overlay2">
+        <div class="prompt-box2">
             <h1>Add Task</h1>
             <h2>Task Name</h2>
-            <input type="text" id="taskName" class="prompt-input">
+            <input type="text" id="taskName" class="prompt-input2">
             <h2>Assignee</h2>
-            <input type="text" id="assignee" class="prompt-input">
+            <input type="text" id="assignee" class="prompt-input2">
             <h2>Due Date</h2>
-            <input type="date" id="dueDate" class="prompt-input">
+            <input type="date" id="dueDate" class="prompt-input2">
             <h2>Priority</h2>
-            <select id="priority" class="prompt-input">
+            <select id="priority" class="prompt-input2">
                 <option value="Low">Low</option>
                 <option value="Medium">Medium</option>
                 <option value="High">High</option>
             </select>
-            <button id="submitTask" class="prompt-button">Add Task</button>
-            <button id="cancelTask" class="cancel-button">Cancel</button>
+            <button id="submitTask" class="prompt-button2">Add Task</button>
+            <button id="cancelTask" class="cancel-button2">Cancel</button>
         </div>
     </div>
     
