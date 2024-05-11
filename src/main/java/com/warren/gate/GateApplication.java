@@ -15,11 +15,6 @@ public class GateApplication {
     }
 
     @GetMapping("/")
-    public String index() {
-        return "welcome"; 
-    }
-
-    @GetMapping("/home")
     public String home() {
         return "gate"; 
     }
