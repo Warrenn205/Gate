@@ -117,3 +117,49 @@ document.addEventListener("DOMContentLoaded", function () {
     input.value = ""; 
   });
 });
+
+function displaySchedule(name, date) {
+  const scheduleList = document.getElementById('scheduleList');
+  const scheduleItem = document.createElement('div');
+  scheduleItem.textContent = `${name} - ${date}`;
+  scheduleList.appendChild(scheduleItem);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const addScheduleButton = document.querySelector('.add-schedule');
+  const overlay = document.getElementById('overlay3');
+  const cancelButton = document.getElementById('cancelInput');
+  const submitButton = document.getElementById('submitInput3');
+  const card = document.querySelector(".schedule_card");
+  const input = document.querySelector(".prompt-input3");
+
+  card.addEventListener("click", function () {
+    overlay.style.display = "flex"; 
+    input.focus();
+  });
+
+  cancelButton.addEventListener('click', function() {
+      overlay.style.display = 'none';
+  });
+
+  submitButton.addEventListener('click', function() {
+      const name = document.getElementById('userInput3').value;
+      const date = document.getElementById('schedule-date').value;
+
+      // Display the schedule
+      displaySchedule(name, date);
+
+      // Clear input fields
+      document.getElementById('userInput3').value = '';
+      document.getElementById('schedule-date').value = '';
+
+      overlay.style.display = 'none';
+  });
+});
+
+function displaySchedule(name, date) {
+  const scheduleList = document.getElementById('scheduleList');
+  const scheduleItem = document.createElement('div');
+  scheduleItem.textContent = `${name} - ${date}`;
+  scheduleList.appendChild(scheduleItem);
+}
