@@ -306,65 +306,66 @@ h2 {
 
         //Function for adding Projects.
         document.getElementById("addProject").addEventListener("click", function() {
-            document.getElementById("addProjectModal").style.display = "block";
-        });
+    document.getElementById("addProjectModal").style.display = "block";
+});
 
-        document.getElementById("cancelProject").addEventListener("click", function() {
-            document.getElementById("addProjectModal").style.display = "none";
-        });
+document.getElementById("cancelProject").addEventListener("click", function() {
+    document.getElementById("addProjectModal").style.display = "none";
+});
 
-        document.getElementById("submitProject").addEventListener("click", function() {
-            const projectName = document.getElementById("projectName").value;
-            const owner = document.getElementById("owner").value;
-            const dueDate = document.getElementById("dueDate").value;
-            const priority = document.getElementById("priority").value;
+document.getElementById("submitProject").addEventListener("click", function() {
+    const projectName = document.getElementById("projectName").value;
+    const owner = document.getElementById("owner").value;
+    const dueDate = document.getElementById("dueDate").value;
+    const priority = document.getElementById("priority").value;
 
-            const projectArea = document.createElement("div");
-            projectArea.classList.add("project-info");
-            projectArea.style.fontFamily = "Arial, sans-serif";
-            projectArea.style.backgroundColor = "White";
-            projectArea.innerHTML = `
-                <span>Project Name: ${projectName}</span>
-                <span>| Owner: ${owner}</span>
-                <span>| Status: Assigned</span>
-                <span>| Due Date: ${dueDate}</span>
-                <span>| Priority: ${priority}</span>
-            `;
-            document.getElementById("projects").appendChild(projectArea);
+    const projectArea = document.createElement("div");
+    projectArea.classList.add("project-info");
+    projectArea.style.fontFamily = "Arial, sans-serif";
+    projectArea.style.backgroundColor = "White";
+    projectArea.innerHTML = `
+        <span>Project Name: ${projectName}</span>
+        <span>| Owner: ${owner}</span>
+        <span>| Status: Assigned</span>
+        <span>| Due Date: ${dueDate}</span>
+        <span>| Priority: ${priority}</span>
+    `;
+    document.getElementById("projects").appendChild(projectArea);
 
-            document.getElementById("addProjectModal").style.display = "none";
+    document.getElementById("addProjectModal").style.display = "none";
+});
 
-            // Function for adding Tasks.
-            document.getElementById("addTask").addEventListener("click", function() {
-                document.getElementById("addTaskModal").style.display = "block";
-            });
+// Event listeners for adding tasks
+document.getElementById("addTask").addEventListener("click", function() {
+    document.getElementById("addTaskModal").style.display = "block";
+});
 
-            document.getElementById("cancelTask").addEventListener("click", function() {
-                document.getElementById("addTaskModal").style.display = "none";
-            });
+document.getElementById("cancelTask").addEventListener("click", function() {
+    document.getElementById("addTaskModal").style.display = "none";
+});
 
-            document.getElementById("submitTask").addEventListener("click", function() {
-            const taskName = document.getElementById("taskName").value;
-            const assignee = document.getElementById("assignee").value;
-            const dueDate = document.getElementById("dueDate").value;
-            const priority = document.getElementById("priority").value;
+document.getElementById("submitTask").addEventListener("click", function() {
+    const taskName = document.getElementById("taskName").value;
+    const assignee = document.getElementById("assignee").value;
+    const dueDate = document.getElementById("dueDate").value;
+    const priority = document.getElementById("priority").value;
 
-            const taskArea = document.createElement("div");
-            taskArea.classList.add("task-info");
-            taskArea.style.fontFamily = "Arial, sans-serif";
-            taskArea.style.backgroundColor = "White";
-            taskArea.innerHTML = `
-                <span>Task Name: ${taskName}</span>
-                <span>| Assignee: ${assignee}</span>
-                <span>| Status: Assigned</span>
-                <span>| Due Date: ${dueDate}</span>
-                <span>| Priority: ${priority}</span>
-            `;
-            document.getElementById("tasks").appendChild(taskArea);
+    const taskArea = document.createElement("div");
+    taskArea.classList.add("task-info");
+    taskArea.style.fontFamily = "Arial, sans-serif";
+    taskArea.style.backgroundColor = "White";
+    taskArea.innerHTML = `
+        <span>Task Name: ${taskName}</span>
+        <span>| Assignee: ${assignee}</span>
+        <span>| Status: Assigned</span>
+        <span>| Due Date: ${dueDate}</span>
+        <span>| Priority: ${priority}</span>
+    `;
+    document.getElementById("tasks").appendChild(taskArea);
 
-            document.getElementById("addTaskModal").style.display = "none";
-        });
-    });
+    document.getElementById("addTaskModal").style.display = "none";
+});
+
     </script>
 </div>
 </body>
