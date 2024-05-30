@@ -39,9 +39,4 @@ public class GateApplication {
         return "finance";
     }
 
-    @GetMapping("/documents")
-    public String documents() {
-        return "documents";
-    }
-
 }
