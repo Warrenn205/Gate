@@ -199,6 +199,22 @@ h2 {
     cursor: pointer;
 }
 
+.delete-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: rgb(192, 57, 43);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: rgb(231, 76, 60);
+}
+
+
 .cancel-button2 {
     width: 100%;
     padding: 10px;
@@ -301,7 +317,9 @@ h2 {
                 <option value="High">High</option>
             </select>
             <button id="saveEdit" class="prompt-button">Save Changes</button>
+            <button id="deleteProject" class="delete-button">Delete Project</button>
             <button id="cancelEdit" class="cancel-button">Cancel</button>
+            
         </div>
     </div>
 
@@ -408,6 +426,11 @@ h2 {
             };
 
             document.getElementById("cancelEdit").onclick = function() {
+                document.getElementById("editProjectModal").style.display = "none";
+            };
+
+            document.getElementById("deleteProject").onclick = function() {
+                projectElement.remove();
                 document.getElementById("editProjectModal").style.display = "none";
             };
         }
