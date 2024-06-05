@@ -101,65 +101,78 @@ document.addEventListener("DOMContentLoaded", function () {
 // Schedule
 document.addEventListener("DOMContentLoaded", function () {
   const card = document.querySelector(".schedule_card");
-  const overlay3 = document.querySelector(".prompt-overlay3");
-  const input = document.querySelector(".prompt-input3");
-  const submitButton = document.querySelector("#submitInput3");
+  const overlay3 = document.getElementById("overlay3");
+  const input = document.getElementById("userInput3");
+  const submitButton = document.getElementById("submitInput3");
+  const cancelButton = document.getElementById("cancelInput");
 
   card.addEventListener("click", function () {
-    overlay3.style.display = "flex"; 
-    input.focus();
-  });
-
-  submitButton.addEventListener("click", function () {
-    const userInput3 = input.value;
-    console.log("User input:", userInput3);
-    overlay3.style.display = "none"; 
-    input.value = ""; 
-  });
-});
-
-function displaySchedule(name, date) {
-  const scheduleList = document.getElementById('scheduleList');
-  const scheduleItem = document.createElement('div');
-  scheduleItem.textContent = `${name} - ${date}`;
-  scheduleList.appendChild(scheduleItem);
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  const addScheduleButton = document.querySelector('.add-schedule');
-  const overlay = document.getElementById('overlay3');
-  const cancelButton = document.getElementById('cancelInput');
-  const submitButton = document.getElementById('submitInput3');
-  const card = document.querySelector(".schedule_card");
-  const input = document.querySelector(".prompt-input3");
-
-  card.addEventListener("click", function () {
-    overlay.style.display = "flex"; 
-    input.focus();
+      overlay3.style.display = "flex"; 
+      input.focus();
   });
 
   cancelButton.addEventListener('click', function() {
-      overlay.style.display = 'none';
+      overlay3.style.display = 'none';
   });
 
   submitButton.addEventListener('click', function() {
-      const name = document.getElementById('userInput3').value;
+      const name = input.value;
       const date = document.getElementById('schedule-date').value;
 
-      // Display the schedule
-      displaySchedule(name, date);
-
-      // Clear input fields
-      document.getElementById('userInput3').value = '';
-      document.getElementById('schedule-date').value = '';
-
-      overlay.style.display = 'none';
+      if (name && date) {
+          displaySchedule(name, date);
+          input.value = '';
+          document.getElementById('schedule-date').value = '';
+          overlay3.style.display = 'none';
+      } else {
+          alert('Please fill out both fields.');
+      }
   });
-});
 
-function displaySchedule(name, date) {
-  const scheduleList = document.getElementById('scheduleList');
-  const scheduleItem = document.createElement('div');
-  scheduleItem.textContent = `${name} - ${date}`;
-  scheduleList.appendChild(scheduleItem);
-}
+  function displaySchedule(name, date) {
+      const scheduleList = document.getElementById('scheduleList');
+      const scheduleItem = document.createElement('div');
+      scheduleItem.className = 'schedule-item';
+      scheduleItem.innerHTML = `
+          <span>Schedule Name: ${name}</span>
+          <span> | Date: ${date}</span>
+      `;
+      scheduleList.appendChild(scheduleItem);
+
+      scheduleItem.addEventListener("click", function() {
+          editSchedule(scheduleItem, name, date);
+      });
+  }
+
+  function editSchedule(scheduleItem, name, date) {
+      input.value = name;
+      document.getElementById('schedule-date').value = date;
+      overlay3.style.display = "flex"; 
+      input.focus();
+
+      submitButton.onclick = function() {
+          const newName = input.value;
+          const newDate = document.getElementById('schedule-date').value;
+
+          if (newName && newDate) {
+              scheduleItem.innerHTML = `
+                  <span>Schedule Name: ${newName}</span>
+                  <span> | Date: ${newDate}</span>
+              `;
+              overlay3.style.display = 'none';
+              input.value = '';
+              document.getElementById('schedule-date').value = '';
+
+              scheduleItem.addEventListener("click", function() {
+                  editSchedule(scheduleItem, newName, newDate);
+              });
+          } else {
+              alert('Please fill out both fields.');
+          }
+      };
+
+      cancelButton.onclick = function() {
+          overlay3.style.display = 'none';
+      };
+  }
+});
