@@ -16,6 +16,21 @@ public class GateApplication {
 
     @GetMapping("/")
     public String home() {
+        return "homepage"; 
+    }
+
+    @GetMapping("/signup")
+    public String signup() {
+        return "signup";
+    }
+
+    @GetMapping("/signin")
+    public String signin() {
+        return "signin";
+    }
+
+    @GetMapping("/gate")
+    public String gate() {
         return "gate"; 
     }
 
