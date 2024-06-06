@@ -12,15 +12,15 @@ Gate is a business management tool that engages business owners with task manage
 
 **Upcoming Features:**
 
-**Task / Project Management**
+**Task / Project Management:**
 With Gate, users will be able to manage their everyday business tasks and projects.
 
-**Financial Tracking**
+**Financial Tracking:**
 Users will also be able to keep track of their finances with the financial tracking feature.
 
-**CRM**
+**CRM:**
 The CRM will allow users to manage the employee and customer relationships.
 
-**Scheduling**
+**Scheduling:**
 Scheduling will allow users keep track of schedules and appointments.
 
