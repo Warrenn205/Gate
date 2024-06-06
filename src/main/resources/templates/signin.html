@@ -7,19 +7,22 @@
 </head>
 <body>
     <div class="box">
-        <form method="post" action="/gate">
-            <a href="signin"><img src="/Gate (White).png"  class="logo" width="200" height="65"></a>
+        <form method="get" action="/gate">
+            <a href="signin"><img src="/Gate (White).png" class="logo" width="200" height="65"></a>
             <h1></h1>
             <div class="input">
-                <input type="email" class="signin" name ="Email" id="Email" placeholder="Email"><br>
+                <input type="email" class="signin" name="Email" id="Email" placeholder="Email"><br>
             </div>
             <div class="input">
-                <input type="password" class="enterpassword" name ="Password" id="Password" placeholder="Password"><br>
+                <input type="password" class="enterpassword" name="Password" id="Password" placeholder="Password"><br>
             </div>
-            <a href="/gate"><input type="submit" value="Login" id="loginButton" disabled></a>
+            <input type="submit" value="Login" id="loginButton">
             <br>
             <!-- <p>Don't have an account?<a href="signup">Sign up</a></p> -->
         </form>
-    <br>
-    <hr>
-    <h5>Gate © 2024</h5>
+        <br>
+        <hr>
+        <h5>Gate © 2024</h5>
+    </div>
+</body>
+</html>
