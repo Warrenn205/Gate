@@ -11,12 +11,16 @@ Gate is a business management tool that engages business owners with task manage
 - **Hibernate** for the handling of object-oriented modeling.
 
 **Upcoming Features:**
+
 **Task / Project Management**
 With Gate, users will be able to manage their everyday business tasks and projects.
+
 **Financial Tracking**
 Users will also be able to keep track of their finances with the financial tracking feature.
+
 **CRM**
 The CRM will allow users to manage the employee and customer relationships.
+
 **Scheduling**
 Scheduling will allow users keep track of schedules and appointments.
 
