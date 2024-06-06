@@ -4,7 +4,7 @@ Gate is a business management tool that engages business owners with task manage
 # This is a ongoing project that is currently being worked on.
 
 # Tools to be used for this project:
-- **Java Spring Boot** for creating the backend for the application.
+- **Spring Boot** for creating the backend for the application.
 - **MySQL** for database handling and the storage and security of users' information.
 - **HTML/CSS** for creating and styling webpages.
 - **JavaScript** to handle functionality and interactivity of webpage elements
