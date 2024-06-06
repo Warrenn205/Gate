@@ -346,3 +346,27 @@ input[type="date"]:hover {
 .card:hover {
   transform: scale(1.05);
 }
+
+.prompt-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.schedule-item {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: relative;
+}
+.edit-buttons {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.schedule-item:hover .edit-buttons {
+  display: block;
+}

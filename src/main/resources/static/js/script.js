@@ -106,6 +106,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const submitButton = document.getElementById("submitInput3");
   const cancelButton = document.getElementById("cancelInput");
 
+  let isEditing = false;
+  let currentScheduleItem = null;
+
   card.addEventListener("click", function () {
       overlay3.style.display = "flex"; 
       input.focus();
@@ -113,6 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   cancelButton.addEventListener('click', function() {
       overlay3.style.display = 'none';
+      resetForm();
   });
 
   submitButton.addEventListener('click', function() {
@@ -120,14 +124,24 @@ document.addEventListener("DOMContentLoaded", function () {
       const date = document.getElementById('schedule-date').value;
 
       if (name && date) {
-          displaySchedule(name, date);
-          input.value = '';
-          document.getElementById('schedule-date').value = '';
+          if (isEditing) {
+              updateSchedule(currentScheduleItem, name, date);
+          } else {
+              displaySchedule(name, date);
+          }
+          resetForm();
           overlay3.style.display = 'none';
       } else {
           alert('Please fill out both fields.');
       }
   });
+
+  function resetForm() {
+      input.value = '';
+      document.getElementById('schedule-date').value = '';
+      isEditing = false;
+      currentScheduleItem = null;
+  }
 
   function displaySchedule(name, date) {
       const scheduleList = document.getElementById('scheduleList');
@@ -136,11 +150,24 @@ document.addEventListener("DOMContentLoaded", function () {
       scheduleItem.innerHTML = `
           <span>Schedule Name: ${name}</span>
           <span> | Date: ${date}</span>
+          <div class="edit-buttons">
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+          </div>
       `;
       scheduleList.appendChild(scheduleItem);
 
-      scheduleItem.addEventListener("click", function() {
+      const editButton = scheduleItem.querySelector('.edit-btn');
+      const deleteButton = scheduleItem.querySelector('.delete-btn');
+
+      editButton.addEventListener("click", function(event) {
+          event.stopPropagation();
           editSchedule(scheduleItem, name, date);
+      });
+
+      deleteButton.addEventListener("click", function(event) {
+          event.stopPropagation();
+          scheduleItem.remove();
       });
   }
 
@@ -150,29 +177,31 @@ document.addEventListener("DOMContentLoaded", function () {
       overlay3.style.display = "flex"; 
       input.focus();
 
-      submitButton.onclick = function() {
-          const newName = input.value;
-          const newDate = document.getElementById('schedule-date').value;
+      isEditing = true;
+      currentScheduleItem = scheduleItem;
+  }
 
-          if (newName && newDate) {
-              scheduleItem.innerHTML = `
-                  <span>Schedule Name: ${newName}</span>
-                  <span> | Date: ${newDate}</span>
-              `;
-              overlay3.style.display = 'none';
-              input.value = '';
-              document.getElementById('schedule-date').value = '';
+  function updateSchedule(scheduleItem, name, date) {
+      scheduleItem.innerHTML = `
+          <span>Schedule Name: ${name}</span>
+          <span> | Date: ${date}</span>
+          <div class="edit-buttons">
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+          </div>
+      `;
 
-              scheduleItem.addEventListener("click", function() {
-                  editSchedule(scheduleItem, newName, newDate);
-              });
-          } else {
-              alert('Please fill out both fields.');
-          }
-      };
+      const editButton = scheduleItem.querySelector('.edit-btn');
+      const deleteButton = scheduleItem.querySelector('.delete-btn');
 
-      cancelButton.onclick = function() {
-          overlay3.style.display = 'none';
-      };
+      editButton.addEventListener("click", function(event) {
+          event.stopPropagation();
+          editSchedule(scheduleItem, name, date);
+      });
+
+      deleteButton.addEventListener("click", function(event) {
+          event.stopPropagation();
+          scheduleItem.remove();
+      });
   }
 });
