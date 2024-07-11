@@ -1,5 +1,5 @@
 ![Gate](https://github.com/Warrenn205/Gate/assets/122620756/562f7209-56b7-489d-9203-38d68905179d)
-Gate is a business management tool that engages business owners with task management, finanical tracking, and scheduling.
+Gate is a business management tool that engages business owners with task management, financial tracking, and scheduling.
 
 **This is an ongoing project that is currently being worked on.**
 
@@ -13,16 +13,16 @@ Gate is a business management tool that engages business owners with task manage
 **Upcoming Features:**
 
 **Task / Project Management:**
-With Gate, users will be able to manage their everyday business tasks and projects.
+With Gate, users can manage their everyday business tasks and projects.
 
 **Financial Tracking:**
-Users will also be able to keep track of their finances with the financial tracking feature.
+Users can also keep track of their finances with the financial tracking feature.
 
 **CRM:**
-The CRM will allow users to manage the employee and customer relationships.
+The CRM will allow users to manage employee and customer relationships.
 
 **Scheduling:**
-Scheduling will allow users keep track of schedules and appointments.
+Scheduling will allow users to keep track of schedules and appointments.
 
-**Sample Screenshot: This is a screenshot of the financials page for financial tracking.**
+**Sample Screenshot: This is a screenshot of the Financials page for financial tracking.**
 ![Gate Sample Screenshot](https://github.com/user-attachments/assets/7f4fb9f6-c369-4c14-b9ee-e58db0f5e9cc)
