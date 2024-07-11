@@ -24,3 +24,5 @@ The CRM will allow users to manage the employee and customer relationships.
 **Scheduling:**
 Scheduling will allow users keep track of schedules and appointments.
 
+**Sample Screenshot: This is a screenshot of the financials page for financial tracking.**
+![Gate Sample Screenshot](https://github.com/user-attachments/assets/7f4fb9f6-c369-4c14-b9ee-e58db0f5e9cc)
