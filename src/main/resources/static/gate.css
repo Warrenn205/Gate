@@ -1,32 +1,60 @@
-.navbar {
-    background-color: #1c1c1c;
-    overflow: hidden;
-    position: fixed;
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 9%;
-    z-index: 1000; 
-    display: flex; 
-    align-items: center;
-    border-bottom: 0cqh;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-.navbar-links {
-    margin-right: auto;
+.wrapper {
+  display: flex;
 }
 
-.navbar a {
-    color: rgb(215, 213, 213);
-    text-align: center;
-    padding: 20px 20px;
-    text-decoration: none;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.sidebar {
+  background-color: #1c1c1c;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15%; /* Sidebar width */
+  height: 100%; /* Full height */
+  z-index: 1000;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center;
+  padding-top: 20px;
 }
 
-.navbar a:hover {
-    color: rgb(255, 255, 255);
+.sidebar .logosection {
+  margin-bottom: 20px;
 }
+
+.sidebar .logosection img {
+  max-width: 100%;
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sidebar a {
+  color: rgb(215, 213, 213);
+  text-align: left;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.1); /* Highlight effect */
+}
+
+h1 {
+  margin-left: 17%; /* Offset for content to account for the sidebar */
+  padding: 20px;
+}
+
 
 h1 {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -34,339 +62,4 @@ h1 {
 
 h4 {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.add-project {
-    background-color: rgb(0, 157, 255);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 7px;
-    cursor: pointer;
-}
-
-.add-project:hover {
-    background-color: rgb(20, 134, 205);
-}
-
-.add-task {
-  background-color: rgba(152, 13, 191, 0.96);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 7px;
-  cursor: pointer;
-}
-
-.add-task:hover {
-  background-color: rgba(97, 8, 121, 0.96);
-}
-
-.crm_card {
-    width: 200px;
-    height: 200px;
-    border: 1px solid rgb(0, 157, 255);
-    background-color: rgb(0, 157, 255);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    border-radius: 10px;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-  
-  
-  .crm_card:hover {
-    transform: scale(1.05);
-  }
-  
-  .card-content {
-    padding: 20px;
-  }
-  
-  .prompt-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none; 
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .prompt-box {
-    width: 600px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-  }
-  
-  .prompt-input {
-    width: 90%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .prompt-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .prompt-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .cancel-button {
-    padding: 10px 20px;
-    background-color: rgba(191, 13, 13, 0.96);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .cancel-button:hover {
-    background-color: rgba(120, 11, 11, 0.96);
-  }
-
-  .crm_card2 {
-    width: 200px;
-    height: 200px;
-    border: 1px solid  #0cc422;
-    background-color: #0cc422;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    border-radius: 10px;
-    color:  rgb(255, 255, 255);
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-  
-  .crm_card2:hover {
-    transform: scale(1.05);
-  }
-  
-  .card-content2 {
-    padding: 20px;
-  }
-
-  .prompt-overlay2 {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none; 
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .prompt-box2 {
-    width: 600px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-  }
-  
-  .prompt-input2 {
-    width: 90%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .prompt-button2 {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .prompt-button2:hover {
-    background-color: #0056b3;
-  }
-  
-  .add-schedule {
-    background-color: rgb(0, 157, 255);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 7px;
-    cursor: pointer;
-}
-
-.add-schedule:hover {
-  background-color: rgb(20, 134, 205);
-}
-
-h3 {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.crm_card3 {
-    width: 200px;
-    height: 200px;
-    border: 1px solid rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border-radius: 10px;
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-  
-  .crm_card3:hover {
-    transform: scale(1.05);
-  }
-  
-  .card-content3 {
-    padding: 20px;
-  }
-
-  .prompt-overlay3 {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none; 
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .prompt-box3 {
-    width: 600px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-  }
-  
-  .prompt-input3 {
-    width: 90%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .prompt-button3 {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .prompt-button3:hover {
-    background-color: #0056b3;
-  }
-  
-  .add-schedule {
-    background-color: rgb(0, 157, 255);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 7px;
-    cursor: pointer;
-}
-
-.add-schedule:hover {
-  background-color: rgb(20, 134, 205);
-}
-
-h3 {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.schedule-date {
-  font-size: 1em;
-  color: #333;
-  margin-bottom: 5px;
-}
-
-input[type="date"] {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1em;
-  width: 200px; 
-}
-
-input[type="date"]:focus {
-  outline: none;
-  border-color: #007bff; 
-}
-
-input[type="date"]:hover {
-  border-color: #666;
-}
-
-.right-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
-.card {
-  width: 200px; 
-  height: 200px; 
-  background-color: #003cff;
-  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  border: 1px solid #ffffff;
-  border-radius: 10px;
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.card2 {
-  width: 200px; 
-  height: 200px; 
-  background-color: #0cc422;
-  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  border: 1px solid #ffffff;
-  border-radius: 10px;
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: scale(1.05);
-}
-
-.prompt-content {
-  background: white;
-  padding: 20px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-}
-.schedule-item {
-  margin-top: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  position: relative;
-}
-.edit-buttons {
-  display: none;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-.schedule-item:hover .edit-buttons {
-  display: block;
 }
