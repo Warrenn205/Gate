@@ -8,7 +8,7 @@ body {
 }
 
 .sidebar {
-  background-color: #1c1c1c;
+  background-color: #0e2428;
   overflow: hidden;
   position: fixed;
   top: 0;
@@ -47,7 +47,7 @@ body {
 
 .sidebar a:hover {
   color: rgb(255, 255, 255);
-  background-color: rgba(255, 255, 255, 0.1); /* Highlight effect */
+  background-color: #3b92a1; /* Highlight effect */
 }
 
 h1 {
