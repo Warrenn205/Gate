@@ -23,5 +23,6 @@ The CRM will allow users to manage employee and customer relationships.
 
 **Scheduling:**
 Scheduling will allow users to keep track of schedules and appointments.
+
 --------------------------------------------------------------------------------------------------------------------
 **Update: Designing new UI with the application, as I wasn't satisfied with old one. Developing more streamlined and sleeker interface.**
