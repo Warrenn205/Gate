@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background-color: #f4f4f4; 
 }
 
 .wrapper {
@@ -8,58 +9,75 @@ body {
 }
 
 .sidebar {
-  background-color: #0e2428;
-  overflow: hidden;
+  background-color: #252526;
   position: fixed;
   top: 0;
   left: 0;
-  width: 15%; /* Sidebar width */
-  height: 100%; /* Full height */
+  width: 15%; 
+  height: 100%; 
   z-index: 1000;
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
+  flex-direction: column;
   align-items: center;
-  padding-top: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); 
+  box-sizing: border-box; 
 }
 
 .sidebar .logosection {
-  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  padding: 20px 10px; 
+  background-color: #1b1b1b; 
+  box-sizing: border-box;
+  border-bottom: 1px solid #2a2a2a; 
 }
 
 .sidebar .logosection img {
-  max-width: 100%;
+  max-width: 80%; 
+  height: auto; 
+  display: block; 
+  margin: 0 auto;
 }
 
 .sidebar-links {
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-top: 20px;
+  padding: 0; 
 }
 
 .sidebar a {
   color: rgb(215, 213, 213);
-  text-align: left;
   padding: 15px 20px;
   text-decoration: none;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
   display: block;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s; 
 }
 
-.sidebar a:hover {
-  color: rgb(255, 255, 255);
-  background-color: #3b92a1; /* Highlight effect */
+.sidebar .section-title {
+  width: 100%;
+  text-align: left;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #aaa;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  border-bottom: 1px solid #444; 
 }
 
 h1 {
-  margin-left: 17%; /* Offset for content to account for the sidebar */
+  margin-left: 17%;
   padding: 20px;
-}
-
-
-h1 {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 h4 {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
