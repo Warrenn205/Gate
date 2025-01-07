@@ -5,24 +5,9 @@ Gate is a business management tool that engages business owners with task manage
 
 # Tools to be used for this project:
 - **Spring Boot** for creating the backend for the application.
+- **React.js** for creating and styling webpages.to handle functionality and interactivity of webpage elements.
 - **MySQL** for database handling and the storage and security of users' information.
-- **HTML/CSS** for creating and styling webpages.
-- **JavaScript** to handle functionality and interactivity of webpage elements
 - **Hibernate** for the handling of object-oriented modeling.
-
-**Upcoming Features:**
-
-**Task / Project Management:**
-With Gate, users can manage their everyday business tasks and projects.
-
-**Financial Tracking:**
-Users can also keep track of their finances with the financial tracking feature.
-
-**CRM:**
-The CRM will allow users to manage employee and customer relationships.
-
-**Scheduling:**
-Scheduling will allow users to keep track of schedules and appointments.
-
+  
 --------------------------------------------------------------------------------------------------------------------
-**Update: Designing new UI with the application, as I wasn't satisfied with old one. Developing more streamlined and sleeker interface.**
+**Update: This project is undergoing a overhaul as I had new ideas for it. It will be updated soon.**
