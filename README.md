@@ -1,5 +1,5 @@
 ![Gate](https://github.com/Warrenn205/Gate/assets/122620756/562f7209-56b7-489d-9203-38d68905179d)
-Gate is a business management tool that engages business owners with task management, financial tracking, and scheduling.
+Gate is a business management tool that helps business owners with project management, reporting and analytics, financial tracking, scheduling, and customer relationship management (CRM).
 
 **This is an ongoing project that is currently being worked on.**
 
